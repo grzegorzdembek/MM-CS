@@ -59,21 +59,60 @@ class Lab01:
         plt.show()
 
 if __name__ == "__main__":
+
+    # Niezależnie od początkowych uczuć (R_0, L_0), 
+    # emocje obojga z czasem całkowicie wygasają do zera (obojętności).
     #przyklad = Lab01(R_0=1, L_0=1, a_R=0.5, a_L=0.7, p_R=0.2, p_L=0.5)
     #przyklad.simulation(days=100) 
     #przyklad.drawPlot()
+  
+    #przyklad = Lab01(R_0=-1, L_0=1, a_R=0.5, a_L=0.7, p_R=0.2, p_L=0.5)
+    #przyklad.simulation(days=100) 
+    #przyklad.drawPlot()
 
-    #zadanie1 = Lab01(R_0=1, L_0=1, a_R=0.5, a_L=0.7, p_R=0.7, p_L=0.9)
+    #przyklad = Lab01(R_0=-1, L_0=-1, a_R=0.5, a_L=0.7, p_R=0.2, p_L=0.5)
+    #przyklad.simulation(days=100) 
+    #przyklad.drawPlot()
+ 
+    # Uczucia gwałtownie rosną w nieskończoność,
+    # przy starcie z wartości dodatnich w stronę coraz silniejszej miłości, 
+    # a z ujemnych w stronę wiekszej nienawiści.
+    zadanie1 = Lab01(R_0=1, L_0=1, a_R=0.5, a_L=0.7, p_R=0.7, p_L=0.9)
+    zadanie1.simulation(days=100) 
+    zadanie1.drawPlot()
+
+    #zadanie1 = Lab01(R_0=-1, L_0=1, a_R=0.5, a_L=0.7, p_R=0.7, p_L=0.9)
     #zadanie1.simulation(days=100) 
     #zadanie1.drawPlot()
 
+    #zadanie1 = Lab01(R_0=-1, L_0=2, a_R=0.5, a_L=0.7, p_R=0.7, p_L=0.9)
+    #zadanie1.simulation(days=100) 
+    #zadanie1.drawPlot()
+
+    # Para wpada w niekończącą się huśtawkę nastrojów (na zmianę miłość i nienawiść), 
+    # a siła tych emocji z każdym kolejnym cyklem coraz bardziej rośnie (spirala się rozkręca).
     #zadanie2 = Lab01(R_0=1, L_0=1, a_R=1, a_L=1, p_R=0.2, p_L=-0.2)
     #zadanie2.simulation(days=100) 
     #zadanie2.drawPlot()
 
+    #zadanie2 = Lab01(R_0=-1, L_0=1, a_R=1, a_L=1, p_R=0.2, p_L=-0.2)
+    #zadanie2.simulation(days=100) 
+    #zadanie2.drawPlot()
+
+    #zadanie2 = Lab01(R_0=-1, L_0=2, a_R=1, a_L=1, p_R=0.2, p_L=-0.2)
+    #zadanie2.simulation(days=100) 
+    #zadanie2.drawPlot()
+
+    # Po kilkunastu dniach uczucia zatrzymują się na stałym poziomie,
+    # a ostateczna siła uczuć zależy od tego, z jakich wartości para wystartowała.
     #zadanie3 = Lab01(R_0=1, L_0=1, a_R=0.5, a_L=0.8, p_R=0.2, p_L=0.5)
     #zadanie3.simulation(days=100) 
     #zadanie3.drawPlot()
-         
 
+    #zadanie3 = Lab01(R_0=-1, L_0=1, a_R=0.5, a_L=0.8, p_R=0.2, p_L=0.5)
+    #zadanie3.simulation(days=100) 
+    #zadanie3.drawPlot()
 
+    #zadanie3 = Lab01(R_0=-1, L_0=2, a_R=0.5, a_L=0.8, p_R=0.2, p_L=0.5)
+    #zadanie3.simulation(days=100) 
+    #zadanie3.drawPlot()
