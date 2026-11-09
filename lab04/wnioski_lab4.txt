@@ -1,0 +1,27 @@
+ANALIZA TEORETYCZNA UKLADU CIAGLEGO
+Warunki stabilności dla układu ciaglego:
+ 1. Slad: tr(J) = j11 + j22
+ 2. Wyznacznik: det(J) = j11*j22 - j12*j21
+ 3. Wyroznik: tr(J)**2 - 4det(J)
+
+PUNKT STALY: (P*, Q*) = (0.0000, 0.0000)
+ tr(J) = 1.0000
+ det(J) = -0.2400
+ Delta = 1.9600
+Punkt NIESTABILNY
+Siodlo.
+------------------------------------------------------------
+PUNKT STALY: (P*, Q*) = (1.0000, 0.0000)
+ tr(J) = -0.4000
+ det(J) = -0.9600
+ Delta = 4.0000
+Punkt NIESTABILNY
+Siodlo.
+------------------------------------------------------------
+PUNKT STALY: (P*, Q*) = (0.2000, 0.4800)
+ tr(J) = -0.2400
+ det(J) = 0.1920
+ Delta = -0.7104
+Punkt STABILNY
+Ognisko.
+------------------------------------------------------------
