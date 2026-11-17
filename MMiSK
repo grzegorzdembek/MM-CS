@@ -1,0 +1,214 @@
+# Modelowanie matematyczne i symulacje komputerowe
+# Kolokwium nr 1
+
+import matplotlib.pyplot as plt
+import math 
+
+class DiscreteSystem: 
+    def __init__(self, x0, y0, param1, param2):
+        self.x0 = x0
+        self.y0 = y0
+        
+        # np. self.r = param1, self.K = param2
+        
+        # self.X = [self.x0]
+        # self.Y = [self.y0]
+        # self.t = [0]
+        # self.N = 100 
+
+        # self.fixed_points = [(0.0, 0.0), (1.0, 1.0)] 
+    
+    def f1(self, x, y):
+        return 
+    
+    def f2(self, x, y):
+        return 
+    
+    def jacobian(self, x, y):
+        # j11 
+        # j12 
+        # j21 
+        # j22 
+        # return [[j11, j12], [j21, j22]]
+        pass
+
+    def theory(self):
+        # for (x, y) in self.fixed_points:
+        #     J = self.jacobian(x, y)
+        #     tr_J = J[0][0] + J[1][1]          # Slad macierzy
+        #     det_J = J[0][0]*J[1][1] - J[0][1]*J[1][0] # Wyznacznik
+        #     
+        #     margin1 = 1 + det_J - abs(tr_J)   # Warunek 1 Jury'ego: |tr J| < 1 + det J
+        #     margin2 = 1 - det_J               # Warunek 2 Jury'ego: det J < 1
+        #     
+        #     print(f"Punkt {x, y}: Slad={tr_J:.4f}, Wyznacznik={det_J:.4f}")
+        #     if margin1 > 0 and margin2 > 0:
+        #         print("  -> STABILNY")
+        #     else:
+        #         print("  -> NIESTABILNY")
+        pass
+    
+    def simulate(self):
+        # for n in range(self.N):
+        #     x_current = self.X[-1] 
+        #     y_current = self.Y[-1]
+        #     
+        #     x_next = self.f1(x_current, y_current)
+        #     y_next = self.f2(x_current, y_current)
+        #     
+        #     self.X.append(x_next) 
+        #     self.Y.append(y_next)
+        #     self.t.append(n + 1)  
+        pass
+    
+    def plot(self):
+        # plt.figure(figsize=(12, 5))
+        # 
+        # WYKRES W CZASIE
+        # plt.subplot(1, 2, 1)
+        # plt.plot(self.t, self.X, label='X', color='blue', marker='.')
+        # plt.plot(self.t, self.Y, label='Y', color='red', marker='.')
+        # plt.title('X(t) i Y(t)')
+        # plt.legend()
+        #
+        # PORTRET FAZOWY (X zalezne od Y)
+        # plt.subplot(1, 2, 2)
+        # plt.plot(self.X, self.Y, color='black', marker='.', linewidth=0.5)
+        # plt.plot(self.X[0], self.Y[0], 'ro', label='Start') # Kropka na poczatku
+        # # Nanoszenie punktow stalych (krzyzyki):
+        # # for (x, y) in self.fixed_points:
+        # #     plt.plot(x, y, 'gX', markersize=10) 
+        # plt.title('Portret fazowy')
+        # plt.legend()
+        # plt.show()
+        pass
+
+class ContinuousSystem:
+    def __init__(self, x0, y0, dt, T, param):
+        self.x0 = x0
+        self.y0 = y0
+        
+        # self.dt = dt # Krok czasowy
+        # self.T = T   # Calkowity czas symulacji
+        
+        # 3. PUNKTY STALE (z kartki):
+        # self.fixed_points = [(0.0, 0.0)]
+        pass
+           
+    def f1(self, x, y):
+        return 
+    
+    def f2(self, x, y):
+        return 
+
+    def jacobian(self, x, y):
+        # j11 = 
+        # return [[j11, j12], [j21, j22]]
+        pass
+    
+    def theory(self):
+        # for (x, y) in self.fixed_points:
+        #     J = self.jacobian(x, y)
+        #     tr_J = J[0][0] + J[1][1]
+        #     det_J = J[0][0]*J[1][1] - J[0][1]*J[1][0]
+        #     delta = tr_J**2 - 4 * det_J
+        #
+        #     print(f"Punkt {x, y}: Slad={tr_J:.4f}, Wyznacznik={det_J:.4f}, Delta={delta:.4f}")
+        #     if tr_J < 0 and det_J > 0: # Warunek dla ciaglego!
+        #         print("  -> STABILNY")
+        #     else:
+        #         print("  -> NIESTABILNY")
+        pass
+    
+    def simulateEuler(self):
+        # t, X, Y = [0], [self.x0], [self.y0]
+        # N = int(self.T / self.dt) # Ile krokow ma petla
+        # for n in range(N):
+        #     xn, yn = X[-1], Y[-1]
+        #     # Euler: x_nowe = x_stare + dt * pochodna_x
+        #     x_next = xn + self.dt * self.f1(xn, yn) 
+        #     y_next = yn + self.dt * self.f2(xn, yn)
+        #     X.append(x_next)
+        #     Y.append(y_next)
+        #     t.append((n + 1) * self.dt)
+        # return t, X, Y
+        pass
+
+    def simulateRK2(self):
+        # t, X, Y = [0], [self.x0], [self.y0]
+        # N = int(self.T / self.dt)
+        # for n in range(N):
+        #     xn, yn = X[-1], Y[-1]
+        #     # Obliczenia posrednie (k1, k2):
+        #     k1_x = self.f1(xn, yn)
+        #     k1_y = self.f2(xn, yn)
+        #     k2_x = self.f1(xn + self.dt * k1_x, yn + self.dt * k1_y)
+        #     k2_y = self.f2(xn + self.dt * k1_x, yn + self.dt * k1_y)
+        #     
+        #     x_next = xn + (self.dt / 2) * (k1_x + k2_x)
+        #     y_next = yn + (self.dt / 2) * (k1_y + k2_y)
+        #     
+        #     X.append(x_next)
+        #     Y.append(y_next)
+        #     t.append((n + 1) * self.dt)
+        # return t, X, Y
+        pass
+
+    def simulateRK4(self):
+        # t, X, Y = [0], [self.x0], [self.y0]
+        # N = int(self.T / self.dt)
+        # for n in range(N):
+        #     xn, yn = X[-1], Y[-1]
+        #     k1_x = self.f1(xn, yn)
+        #     k1_y = self.f2(xn, yn)
+        #     k2_x = self.f1(xn + 0.5*self.dt*k1_x, yn + 0.5*self.dt*k1_y)
+        #     k2_y = self.f2(xn + 0.5*self.dt*k1_x, yn + 0.5*self.dt*k1_y)
+        #     k3_x = self.f1(xn + 0.5*self.dt*k2_x, yn + 0.5*self.dt*k2_y)
+        #     k3_y = self.f2(xn + 0.5*self.dt*k2_x, yn + 0.5*self.dt*k2_y)
+        #     k4_x = self.f1(xn + self.dt*k3_x, yn + self.dt*k3_y)
+        #     k4_y = self.f2(xn + self.dt*k3_x, yn + self.dt*k3_y)
+        #     
+        #     x_next = xn + (self.dt/6) * (k1_x + 2*k2_x + 2*k3_x + k4_x)
+        #     y_next = yn + (self.dt/6) * (k1_y + 2*k2_y + 2*k3_y + k4_y)
+        #     
+        #     X.append(x_next)
+        #     Y.append(y_next)
+        #     t.append((n+1) * self.dt)
+        # return t, X, Y
+        pass
+    
+    def plot(self):
+        # tE, xE, yE = self.simulateEuler()
+        # tR2, xR2, yR2 = self.simulateRK2()
+        #
+        # plt.figure(figsize=(15, 5))
+        #
+        # WYKRES DLA X(t)
+        # plt.subplot(1, 3, 1)
+        # plt.plot(tE, xE, label='Euler', color='black')
+        # plt.plot(tR2, xR2, label='RK2', color='blue')
+        # plt.legend()
+        # plt.title('Zmienna X w czasie')
+        #
+        # WYKRES DLA Y(t)
+        # plt.subplot(1, 3, 2)
+        # plt.plot(tE, yE, label='Euler', color='black')
+        # plt.plot(tR2, yR2, label='RK2', color='blue')
+        # plt.legend()
+        # plt.title('Zmienna Y w czasie')
+        #
+        # PORTRET FAZOWY (X vs Y)
+        # plt.subplot(1, 3, 3)
+        # plt.plot(xE, yE, label='Euler', color='black', linewidth=0.5)
+        # plt.plot(xR2, yR2, label='RK2', color='blue', linewidth=0.5)
+        # plt.plot(self.x0, self.y0, 'ro', label='Start')
+        # plt.legend()
+        # plt.title('Portret fazowy')
+        #
+        # plt.tight_layout()
+        # plt.show()
+        pass
+    
+if __name__ == "__main__":
+    pass
+    
